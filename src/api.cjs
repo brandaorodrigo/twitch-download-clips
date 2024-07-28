@@ -59,33 +59,21 @@ const getClips = async (broadcasterId, token, clientId) => {
     return clips;
 };
 
-const getFile = async (url) => {
-    let driver = undefined;
-    let file = undefined;
-    try {
-        const options = new chrome.Options();
-        options.addArguments('--headless');
-        options.addArguments('--no-sandbox');
-        options.addArguments('--disable-dev-shm-usage');
-        options.addArguments('--log-level=ERROR');
-        driver = await new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(options)
-            .setChromeService(new chrome.ServiceBuilder(chromedriver.path))
-            .build();
-        await driver.get(url);
-        const element = await driver.wait(until.elementLocated(By.css('video')), 10000);
-        file = await element.getAttribute('src');
-    } finally {
-        if (driver) {
-            await driver.quit();
-        }
-    }
-    return file;
+const getDriver = async () => {
+    const options = new chrome.Options();
+    options.addArguments('--headless');
+    options.addArguments('--log-level=3');
+    return await new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(options)
+        .setChromeService(new chrome.ServiceBuilder(chromedriver.path))
+        .build();
 };
 
-const getVideo = async (url, file) => {
-    found = await getFile(url);
+const getVideo = async (url, file, driver) => {
+    await driver.get(url);
+    const element = await driver.wait(until.elementLocated(By.css('video')), 10000);
+    const found = await element.getAttribute('src');
     if (!found) {
         return false;
     }
@@ -103,5 +91,6 @@ module.exports = {
     getToken,
     getBroadcasterId,
     getClips,
+    getDriver,
     getVideo,
 };
