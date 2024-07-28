@@ -2,7 +2,6 @@ const fs = require('node:fs');
 const { getVideo, getDriver } = require('./api.cjs');
 const args = process.argv.slice(2);
 const channel = args[0];
-const { exec } = require('child_process');
 
 if (!channel) {
     console.error('channel required');
@@ -19,11 +18,6 @@ for (const clip of clips) {
     if (!fs.existsSync(file) || !fs.statSync(file).size) {
         files.push({ url: clip.url, file });
     }
-    /*
-    if (files.length === 50) {
-        break;
-    }
-    */
 }
 
 console.log('TO DOWNLOAD', files.length);
