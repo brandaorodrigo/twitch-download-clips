@@ -11,10 +11,10 @@
         "@biomejs/biome": "^1.8.3",
         "axios": "^1.7.2",
         "child_process": "^1.0.2",
-        "chromedriver": "^126.0.4",
+        "chromedriver": "^126.0.5",
         "csv-parser": "^3.0.0",
-        "fs": "^0.0.1-security",
+        "fs": "0.0.1-security",
         "node": "^18.20.4",
-        "selenium-webdriver": "^4.22.0"
+        "selenium-webdriver": "^4.23.0"
     }
 }

@@ -67,7 +67,7 @@ const getFile = async (url) => {
         options.addArguments('--headless');
         options.addArguments('--no-sandbox');
         options.addArguments('--disable-dev-shm-usage');
-        options.addArguments('--log-level=OFF');
+        options.addArguments('--log-level=ERROR');
         driver = await new Builder()
             .forBrowser('chrome')
             .setChromeOptions(options)

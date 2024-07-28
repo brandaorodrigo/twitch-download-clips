@@ -15,22 +15,26 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   chromedriver:
-    specifier: ^126.0.4
-    version: 126.0.4
+    specifier: ^126.0.5
+    version: 126.0.5
   csv-parser:
     specifier: ^3.0.0
     version: 3.0.0
   fs:
-    specifier: ^0.0.1-security
+    specifier: 0.0.1-security
     version: 0.0.1-security
   node:
     specifier: ^18.20.4
     version: 18.20.4
   selenium-webdriver:
-    specifier: ^4.22.0
-    version: 4.22.0
+    specifier: ^4.23.0
+    version: 4.23.0
 
 packages:
+
+  /@bazel/runfiles@5.8.1:
+    resolution: {integrity: sha512-NDdfpdQ6rZlylgv++iMn5FkObC/QlBQvipinGLSOguTYpRywmieOyJ29XHvUilspwTFSILWpoE9CqMGkHXug1g==}
+    dev: false
 
   /@biomejs/biome@1.8.3:
     resolution: {integrity: sha512-/uUV3MV+vyAczO+vKrPdOW0Iaet7UnJMU4bNMinggGJTAnBPjCoLEYcyYtYHNnUNYlv4xZMH6hVIQCAozq8d5w==}
@@ -187,8 +191,8 @@ packages:
     resolution: {integrity: sha512-Wmza/JzL0SiWz7kl6MhIKT5ceIlnFPJX+lwUGj7Clhy5MMldsSoJR0+uvRzOS5Kv45Mq7t1PoE8TsOA9bzvb6g==}
     dev: false
 
-  /chromedriver@126.0.4:
-    resolution: {integrity: sha512-mIdJqdocfN/y9fl5BymIzM9WQLy64x078i5tS1jGFzbFAwXwXrj3zmA86Wf3R/hywPYpWqwXxFGBJHgqZTuGCA==}
+  /chromedriver@126.0.5:
+    resolution: {integrity: sha512-xXVxwxd8CJ6yg2KEvFqLQi7V0RvF78xFnLB+xo9g9MoJNHMQccD7b4OWaxtKDy5RXrMgQ6Jb6vUN3SjTYXHLEQ==}
     engines: {node: '>=18'}
     hasBin: true
     requiresBuild: true
@@ -597,10 +601,11 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: false
 
-  /selenium-webdriver@4.22.0:
-    resolution: {integrity: sha512-GNbrkCHmy249ai885wgXqTfqL2lZnclUH/P8pwTDIqzyFxU3YhDiN7p/c9tMFA4NhgRdEBO2QCG+CWmG7xr/Mw==}
+  /selenium-webdriver@4.23.0:
+    resolution: {integrity: sha512-DdvtInpnMt95Td8VApvmAw7oSydBD9twIRXqoMyRoGMvL1dAnMFxdrwnW6L0d/pF/uoNTjbVUarwGZ9wIGNStA==}
     engines: {node: '>= 14.21.0'}
     dependencies:
+      '@bazel/runfiles': 5.8.1
       jszip: 3.10.1
       tmp: 0.2.3
       ws: 8.18.0
