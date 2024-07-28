@@ -1,0 +1,76 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 100
+    },
+    "javascript": {
+        "formatter": {
+            "jsxQuoteStyle": "single",
+            "quoteStyle": "single"
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "a11y": {
+                // Para não exigir usar onKeyPress junto de onClick
+                "useKeyWithClickEvents": "off"
+            },
+            "correctness": {
+                // Para useEffetcs sem necessidade de todas os parametros usados
+                "useExhaustiveDependencies": "off"
+            },
+            "performance": {
+                // Para poder utilizar o delete de parametros (TEMPORÁRIO)
+                "noDelete": "off"
+            },
+            "security": {
+                // Para poder utilizar <iframe> dentro do projeto
+                "noDangerouslySetInnerHtml": "off"
+            },
+            "style": {
+                "noUnusedTemplateLiteral": {
+                    "fix": "safe",
+                    "level": "error"
+                },
+                "noUselessElse": {
+                    "fix": "safe",
+                    "level": "error"
+                },
+                "useBlockStatements": {
+                    "fix": "safe",
+                    "level": "error"
+                },
+                // Para converter <div></div> para <div />
+                "useSelfClosingElements": {
+                    "fix": "safe",
+                    "level": "error"
+                },
+                "useTemplate": {
+                    "fix": "safe",
+                    "level": "error"
+                }
+            },
+            "suspicious": {
+                // Para alertar que está sendo usado console.log
+                "noConsoleLog": "off",
+                "noDoubleEquals": {
+                    "fix": "safe",
+                    "level": "error"
+                },
+                // Para permitir uso do any no typescript
+                "noExplicitAny": "off"
+            }
+        }
+    },
+    "organizeImports": {
+        "enabled": true
+    },
+    "files": {
+        "ignore": ["*.js"]
+    }
+}

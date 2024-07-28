@@ -1,0 +1,4 @@
+download/*.mp4
+json/*.json
+node_modules
+src/config.json
