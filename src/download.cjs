@@ -22,16 +22,18 @@ for (const clip of clips) {
 
 console.log('TO DOWNLOAD', files.length);
 
-getDriver().then((driver) => {
-    let i = 0;
-    const loop = async () => {
-        await getVideo(files?.[i]?.url, files?.[i]?.file, driver);
-        i = i + 1;
-        if (files?.[i]?.url && i <= 1000) {
-            loop();
-        } else {
-            driver.quit();
-        }
-    };
-    loop();
-});
+if (files.length) {
+    getDriver().then((driver) => {
+        let i = 0;
+        const loop = async () => {
+            await getVideo(files?.[i]?.url, files?.[i]?.file, driver);
+            i = i + 1;
+            if (files?.[i]?.url && i <= 1000) {
+                loop();
+            } else {
+                driver.quit();
+            }
+        };
+        loop();
+    });
+}
