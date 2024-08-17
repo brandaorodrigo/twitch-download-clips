@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@biomejs/biome": "^1.8.3",
-        "axios": "^1.7.2",
+        "axios": "^1.7.4",
         "chromedriver": "^126.0.5",
         "csv-parser": "^3.0.0",
         "fs": "0.0.1-security",
